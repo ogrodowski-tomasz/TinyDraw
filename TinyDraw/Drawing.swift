@@ -21,6 +21,30 @@ class Drawing: ObservableObject {
         return all
     }
 
+    @Published var foregroundColor = Color.black {
+        didSet {
+            currentStroke.color = foregroundColor
+        }
+    }
+
+    @Published var lineWidth = 3.0 {
+        didSet {
+            currentStroke.width = lineWidth
+        }
+    }
+
+    @Published var lineSpacing = 0.0 {
+        didSet {
+            currentStroke.spacing = lineSpacing
+        }
+    }
+
+    @Published var blurAmount = 0.0 {
+        didSet {
+            currentStroke.blur = blurAmount
+        }
+    }
+
     // Moving finger on screen (which means drawing a stroke)
     func add(point: CGPoint) {
         objectWillChange.send() // announcing that our drawing will cahnge
@@ -35,7 +59,12 @@ class Drawing: ObservableObject {
     }
 
     func newStroke() {
-        currentStroke = Stroke() // new stroke prepared to be drawn
+        currentStroke = Stroke( // new stroke prepared to be drawn
+            color: foregroundColor,
+            width: lineWidth,
+            spacing: lineSpacing,
+            blur: blurAmount
+        )
     }
 
 }

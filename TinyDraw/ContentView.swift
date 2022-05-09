@@ -15,8 +15,7 @@ struct ContentView: View {
     var body: some View {
         Canvas { context, size in
             for stroke in drawing.strokes {
-                var path = Path()
-                path.addLines(stroke.points) //add all lines user draw
+                let path = Path(curving: stroke.points) //add all lines user draw
 
                 var contextCopy = context // if we create a blur, it will sustain with future lines. Making copy of context lets us blur only this one, specific line.
 

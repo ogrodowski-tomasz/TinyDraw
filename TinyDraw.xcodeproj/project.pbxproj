@@ -14,6 +14,7 @@
 		40BC444A282938B300B26B47 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC4449282938B300B26B47 /* Stroke.swift */; };
 		40BC444C282938F300B26B47 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC444B282938F300B26B47 /* Drawing.swift */; };
 		40BC444F2829542700B26B47 /* Color-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC444E2829542700B26B47 /* Color-Codable.swift */; };
+		40BC44512829597600B26B47 /* Path-Curving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC44502829597600B26B47 /* Path-Curving.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		40BC444B282938F300B26B47 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		40BC444D28294D4900B26B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		40BC444E2829542700B26B47 /* Color-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Codable.swift"; sourceTree = "<group>"; };
+		40BC44502829597600B26B47 /* Path-Curving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path-Curving.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				40BC443B2829376700B26B47 /* TinyDrawApp.swift */,
 				40BC443D2829376700B26B47 /* ContentView.swift */,
 				40BC4449282938B300B26B47 /* Stroke.swift */,
+				40BC44502829597600B26B47 /* Path-Curving.swift */,
 				40BC444E2829542700B26B47 /* Color-Codable.swift */,
 				40BC444B282938F300B26B47 /* Drawing.swift */,
 				40BC443F2829376B00B26B47 /* Assets.xcassets */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BC444F2829542700B26B47 /* Color-Codable.swift in Sources */,
+				40BC44512829597600B26B47 /* Path-Curving.swift in Sources */,
 				40BC444C282938F300B26B47 /* Drawing.swift in Sources */,
 				40BC443E2829376700B26B47 /* ContentView.swift in Sources */,
 				40BC444A282938B300B26B47 /* Stroke.swift in Sources */,

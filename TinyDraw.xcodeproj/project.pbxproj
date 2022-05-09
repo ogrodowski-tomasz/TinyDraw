@@ -13,6 +13,7 @@
 		40BC44432829376B00B26B47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BC44422829376B00B26B47 /* Preview Assets.xcassets */; };
 		40BC444A282938B300B26B47 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC4449282938B300B26B47 /* Stroke.swift */; };
 		40BC444C282938F300B26B47 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC444B282938F300B26B47 /* Drawing.swift */; };
+		40BC444F2829542700B26B47 /* Color-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC444E2829542700B26B47 /* Color-Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		40BC44422829376B00B26B47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40BC4449282938B300B26B47 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
 		40BC444B282938F300B26B47 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		40BC444D28294D4900B26B47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		40BC444E2829542700B26B47 /* Color-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +58,11 @@
 		40BC443A2829376700B26B47 /* TinyDraw */ = {
 			isa = PBXGroup;
 			children = (
+				40BC444D28294D4900B26B47 /* Info.plist */,
 				40BC443B2829376700B26B47 /* TinyDrawApp.swift */,
 				40BC443D2829376700B26B47 /* ContentView.swift */,
 				40BC4449282938B300B26B47 /* Stroke.swift */,
+				40BC444E2829542700B26B47 /* Color-Codable.swift */,
 				40BC444B282938F300B26B47 /* Drawing.swift */,
 				40BC443F2829376B00B26B47 /* Assets.xcassets */,
 				40BC44412829376B00B26B47 /* Preview Content */,
@@ -143,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BC444F2829542700B26B47 /* Color-Codable.swift in Sources */,
 				40BC444C282938F300B26B47 /* Drawing.swift in Sources */,
 				40BC443E2829376700B26B47 /* ContentView.swift in Sources */,
 				40BC444A282938B300B26B47 /* Stroke.swift in Sources */,
@@ -278,11 +284,13 @@
 				DEVELOPMENT_TEAM = FU45F4SL37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinyDraw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,11 +315,13 @@
 				DEVELOPMENT_TEAM = FU45F4SL37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TinyDraw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

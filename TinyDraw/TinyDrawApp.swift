@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct TinyDrawApp: App {
     var body: some Scene {
-        WindowGroup {
+        // To make a new document call Drawing.init give me the file coming in, and inject it into environment.
+        DocumentGroup(newDocument: Drawing.init) { file in
             ContentView()
-                .environmentObject(Drawing()) // Injecting Drawing int oenvironment. Here we are passing the object externally
+                .environmentObject(file.document) // Injecting Drawing into environment. Here we are passing the object externally
         }
     }
 }

@@ -12,6 +12,9 @@ class Drawing: ObservableObject {
     private var oldStrokes = [Stroke]() // stroke we've drawn already
     private var currentStroke = Stroke() // Currently drawn stroke
 
+    // Managing 'undo'
+    var undoManager: UndoManager?
+
     init() { }
 
     // Adding current stroke to array of all strokes
@@ -53,9 +56,7 @@ class Drawing: ObservableObject {
 
     // When user lift finger up (which means ending of drawing a stroke)
     func finishedStroke() {
-        objectWillChange.send()
-        oldStrokes.append(currentStroke)
-        newStroke()
+        addStrokeWithUndo(currentStroke)
     }
 
     func newStroke() {
@@ -67,4 +68,39 @@ class Drawing: ObservableObject {
         )
     }
 
+    func undo() {
+        objectWillChange.send()
+        undoManager?.undo()
+    }
+
+    func redo() {
+        objectWillChange.send()
+        undoManager?.redo()
+    }
+
+    // Support for "Undo" and "Redo"
+
+    // adding a stroke but prepared to undo this adding
+    private func addStrokeWithUndo(_ stroke: Stroke) {
+        // preparing an "Undo Action" to remove the stroke
+        undoManager?.registerUndo(withTarget: self, handler: { drawing in
+            // This 'handler' method will not be done until User press 'undo' button
+            drawing.removeStrokeWithUndo(stroke)
+        })
+
+        objectWillChange.send()
+        oldStrokes.append(stroke)
+        newStroke()
+    }
+
+    // removing a stroke but prepared to redo this and view that stroke again
+    private func removeStrokeWithUndo(_ stroke: Stroke) {
+        // User pressed 'remove'
+        undoManager?.registerUndo(withTarget: self, handler: { drawing in
+            // "Redo" = "Undo the undo"
+            drawing.addStrokeWithUndo(stroke)
+        })
+
+        oldStrokes.removeLast()
+    }
 }

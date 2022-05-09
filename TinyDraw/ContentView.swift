@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var drawing: Drawing
+    @Environment(\.undoManager) var undoManager
     @State private var showingBrushOption: Bool = false
 
     var body: some View {
@@ -32,7 +33,8 @@ struct ContentView: View {
                                 lineWidth: stroke.width,
                                 lineCap: .round,
                                 lineJoin: .round,
-                                dash: [1, stroke.spacing * stroke.width] // przerywana linia
+                                dash: [1, stroke.spacing * stroke.width] // przerywana linia.
+                                // 1: draw a dot, stroke.spacing * stroke.width: space between dots adaptive to the width of line and to spacing.
                             )
                     )
                 }
@@ -49,6 +51,20 @@ struct ContentView: View {
             .ignoresSafeArea()
             .navigationTitle("TinyDraw")
             .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+
+                    Button(action: drawing.undo) {
+                        Label("Undo", systemImage: "arrow.uturn.backward")
+                    }
+                    .disabled(undoManager?.canUndo == false)
+
+                    Button(action: drawing.redo) {
+                        Label("Redo", systemImage: "arrow.uturn.forward")
+                    }
+                    .disabled(undoManager?.canRedo == false)
+                    
+                }
+
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     ColorPicker("Color", selection: $drawing.foregroundColor)
                         .labelsHidden()
@@ -89,6 +105,9 @@ struct ContentView: View {
                         }
                     }
                 }
+            }
+            .onAppear {
+                drawing.undoManager = undoManager
             }
         }
         .navigationViewStyle(.stack)
